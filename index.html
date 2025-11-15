@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <body>
+        <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>🫁 Kenali Paru Sehat 🫁</h1>
+                <p>Belajar menjaga kesehatan paru-paru dengan cara yang seru! 😊</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- navigasi -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#beranda" class="nav-btn">🏠 Beranda</a></li>
+                <li><a href="#edukasi" class="nav-btn">📚 Edukasi</a></li>
+                <li><a href="#game" class="nav-btn">🎮 Game Seru</a></li>
+                <li><a href="#tips" class="nav-btn">💡 Tips Sehat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- beranda -->
+        <section id="beranda" class="section">
+            <div class="container">
+                <h2>Selamat Datang di Dunia Paru Sehat! 🌈</h2>
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <div class="welcome-message">
+                                <p>Halo, teman-teman! 👋</p>
+                                <p>Aku <span class="quro-name">Quro</span>, dokter imut yang akan menemani kalian belajar tentang paru-paru!</p>
+                                <p>Ayo, kita belajar sambil bermain! 🎉</p>
+                            </div>
+                            <div class="bubbles-container">
+                                <div class="bubble bubble-1">Aku siap membantu!</div>
+                                <div class="bubble bubble-2">Yuk, jaga paru-paru!</div>
+                            </div>
+                        </div>
+                        <div class="hero-animation">
+                            <!-- animasi quro -->
+                            <div class="quro-animation">
+                                <div class="animation-container">
+                                    <img src="quro.png" alt="Dokter Quro" class="quro-image" id="quroImage">
+                                    <div class="animation-controls">
+                                        <button class="anim-btn" onclick="playAnimation('wave')">👋</button>
+                                        <button class="anim-btn" onclick="playAnimation('jump')">🦘</button>
+                                        <button class="anim-btn" onclick="playAnimation('dance')">💃</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- edukasi -->
+        <section id="edukasi" class="section">
+            <div class="container">
+                <h2>Apa Itu Bronkopneumonia? 🤔</h2>
+                <div class="education-content">
+                    <div class="info-card">
+                        <div class="card-icon">🫁</div>
+                        <h3>Apa itu Paru-Paru?</h3>
+                        <p>Paru-paru adalah bagian tubuh yang membantu kita bernapas. Mereka seperti balon yang bisa mengembang dan mengempis.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">😷</div>
+                        <h3>Apa itu Bronkopneumonia?</h3>
+                        <p>Bronkopneumonia adalah penyakit yang membuat paru-paru kita sakit. Ini terjadi ketika kuman jahat masuk ke paru-paru.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="card-icon">🤧</div>
+                        <h3>Tanda-tanda Bronkopneumonia</h3>
+                        <ul>
+                            <li>Batuk yang tidak berhenti 🤒</li>
+                            <li>Sulit bernapas 😫</li>
+                            <li>Badan panas 🌡️</li>
+                            <li>Lelah dan tidak mau bermain 😴</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- game Seru -->
+        <section id="game" class="section">
+            <div class="container">
+                <h2>Game Seru: Tantangan Paru Sehat! 🎮</h2>
+                <p>Ayo, uji pengetahuanmu tentang kesehatan paru-paru dengan game seru ini! 🧠</p>
+                
+                <div class="game-container">
+                    <div id="game-start" class="game-screen active">
+                        <div class="game-icon">🎯</div>
+                        <h3>Siap Bermain? 🎉</h3>
+                        <p>Ada 7 pertanyaan seru yang harus kamu jawab!</p>
+                        <p>Kamu akan dapat nilai di akhir permainan!</p>    
+                        <button id="start-btn" class="btn play-btn">Mulai Game! 🚀</button>
+                    </div>
+                    
+                    <div id="game-quiz" class="game-screen">
+                        <div class="question-counter">
+                            Pertanyaan <span id="current-question">1</span> dari 7
+                        </div>
+                        <div class="question-box">
+                            <h3 id="question-text">Pertanyaan akan muncul di sini</h3>
+                            <div class="options-container">
+                                <!-- Opsi jawaban akan diisi oleh JavaScript -->
+                            </div>
+                        </div>
+                        <button id="next-btn" class="btn next-btn" disabled>Lanjutkan ➡️</button>
+                    </div>
+                    
+                    <div id="game-result" class="game-screen">
+                        <div class="result-icon">🏆</div>
+                        <h3>Selamat! 🎊</h3>
+                        <p>Kamu telah menyelesaikan Tantangan Paru Sehat!</p>
+                        <div class="score-container">
+                            <div class="score-circle">
+                                <span id="final-score">0</span>
+                                <small>/ 7</small>
+                            </div>
+                            <div class="score-message" id="score-message"></div>
+                        </div>
+                        <div class="answers-review">
+                            <!-- Review jawaban akan diisi oleh JavaScript -->
+                        </div>
+                        <button id="restart-btn" class="btn play-btn">Main Lagi! 🔄</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tips Sehat -->
+        <section id="tips" class="section">
+            <div class="container">
+                <h2>Tips Menjaga Paru-Paru Sehat 💪</h2>
+                <div class="tips-container">
+                    <div class="tip-card">
+                        <div class="tip-icon">🥦</div>
+                        <h3>Makan Sehat</h3>
+                        <p>Makan buah dan sayur setiap hari agar paru-paru kuat!</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">💧</div>
+                        <h3>Minum Air</h3>
+                        <p>Minum air yang cukup membantu paru-paru bekerja baik!</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🏃‍♂️</div>
+                        <h3>Bermain di Luar</h3>
+                        <p>Bermain di luar rumah membuat paru-paru sehat!</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🚭</div>
+                        <h3>Jauhi Asap</h3>
+                        <p>Jauhi asap rokok karena berbahaya untuk paru-paru!</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🧼</div>
+                        <h3>Cuci Tangan</h3>
+                        <p>Cuci tangan pakai sabun untuk hindari kuman jahat!</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">😴</div>
+                        <h3>Tidur Cukup</h3>
+                        <p>Tidur yang cukup membantu tubuh lawan penyakit!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <p>Dibuat dengan ❤️ oleh Quro si Dokter Imut</p>
+            <p>Kenali Paru Sehat - Edukasi Kesehatan untuk Anak</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+</html>
